@@ -141,13 +141,17 @@ if (form) {
 
         let valid = true;
 
+
         // पुराने Error हटाओ
         document.querySelectorAll(".error-message").forEach(el => el.remove());
+
 
         // पुराने Border हटाओ
         document.querySelectorAll("input, textarea").forEach(el => {
             el.classList.remove("error", "success");
         });
+
+
 
         // Name Validation
         if (name.value.trim() === "") {
@@ -161,6 +165,8 @@ if (form) {
 
         }
 
+
+
         // Mobile Validation
         if (!/^[6-9]\d{9}$/.test(mobile.value.trim())) {
 
@@ -172,6 +178,8 @@ if (form) {
             mobile.classList.add("success");
 
         }
+
+
 
         // Email Validation
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
@@ -185,6 +193,8 @@ if (form) {
 
         }
 
+
+
         // Message Validation
         if (message.value.trim() === "") {
 
@@ -197,12 +207,37 @@ if (form) {
 
         }
 
-        // अगर सब सही है
+
+
+        // अगर सब सही है तो WhatsApp भेजें
         if (valid) {
 
-            alert("✅ आपका संदेश सफलतापूर्वक भेज दिया गया।");
+
+            let ownerNumber = "916378747887";
+
+
+            let whatsappMessage =
+`📩 नई Contact Inquiry
+
+👤 नाम: ${name.value}
+
+📱 मोबाइल: ${mobile.value}
+
+✉️ ईमेल: ${email.value}
+
+💬 संदेश:
+${message.value}`;
+
+
+            let whatsappURL =
+            "https://wa.me/" + ownerNumber + "?text=" + encodeURIComponent(whatsappMessage);
+
+
+            window.open(whatsappURL, "_blank");
+
 
             form.reset();
+
 
             document.querySelectorAll(".success").forEach(el => {
                 el.classList.remove("success");
@@ -210,9 +245,12 @@ if (form) {
 
         }
 
+
     });
 
 }
+
+
 
 // Error Function
 function showError(input, message) {
@@ -228,18 +266,25 @@ function showError(input, message) {
     input.after(small);
 
 }
+
+
+
 document.querySelectorAll("#contactForm input, #contactForm textarea").forEach(input => {
 
     input.addEventListener("input", function () {
 
-        // Error Border हटाओ
+
         this.classList.remove("error");
 
-        // Error Message हटाओ
+
         const error = this.nextElementSibling;
+
         if (error && error.classList.contains("error-message")) {
+
             error.remove();
+
         }
+
 
     });
 
