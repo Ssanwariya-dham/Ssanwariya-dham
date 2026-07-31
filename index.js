@@ -115,3 +115,14 @@ document.addEventListener("click",(e)=>{
     }
 
 });
+window.addEventListener("load",()=>{
+
+    const hero = document.querySelector(".hero1");
+
+    setTimeout(()=>{
+
+        hero.classList.add("show");
+
+    },300);
+
+});

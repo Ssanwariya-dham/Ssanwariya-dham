@@ -1069,3 +1069,69 @@ nav{
     list-style-position: inside;
 }
 }
+.hero1 h1,
+.hero1 h2,
+.hero1 h3,
+.hero1 p,
+.hero-buttons{
+
+    opacity:0;
+    transform:translateY(60px) scale(.9);
+
+}
+
+.hero1.show h1,
+.hero1.show h2,
+.hero1.show h3,
+.hero1.show p,
+.hero1.show .hero-buttons{
+
+    opacity:1;
+    transform:translateY(0) scale(1);
+
+}
+.hero1.show h1{
+
+    transition:1s ease;
+}
+
+.hero1.show h2{
+
+    transition:1s ease .3s;
+}
+
+.hero1.show h3{
+
+    transition:1s ease .6s;
+}
+
+.hero1.show p{
+
+    transition:1s ease .9s;
+}
+
+.hero1.show .hero-buttons{
+
+    transition:1s ease 1.2s;
+}
+.hero1.show h1,
+.hero1.show h2{
+
+    animation:heroGlow 2s infinite alternate;
+}
+
+@keyframes heroGlow{
+
+    from{
+
+        text-shadow:0 0 8px #D4AF37;
+    }
+
+    to{
+
+        text-shadow:
+        0 0 20px #FFD700,
+        0 0 35px #FFD700;
+    }
+
+}
