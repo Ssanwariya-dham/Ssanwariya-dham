@@ -6,6 +6,7 @@
     <title>श्री सांवरिया सेवा धाम</title>
     <link rel="icon" type="image/png" href="image/logo.png">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -57,7 +58,7 @@
                  <span>व्यक्तिगत समाधान प्राप्त करें।</span>
             </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="hero-btn">
+                    <a href="#popup" class="hero-btn" id="bookBtn">
                          🔮 अभी परामर्श लें
                     </a>
                 </div>
@@ -386,15 +387,15 @@
 
         <div class="contact-form">
 
-            <form>
+            <form  id="contactForm">
 
-                <input type="text" placeholder="पूरा नाम">
+                <input type="text" id="name" placeholder="पूरा नाम">
 
-                <input type="tel" placeholder="मोबाइल नंबर">
+                <input type="tel" id="mobile" placeholder="मोबाइल नंबर">
 
-                <input type="email" placeholder="ईमेल पता">
+                <input type="email" id="email" placeholder="ईमेल पता">
 
-                <textarea placeholder="अपना संदेश लिखें"></textarea>
+                <textarea id="message" placeholder="अपना संदेश लिखें"></textarea>
 
                 <button type="submit">
                     ✨ संदेश भेजें
@@ -514,6 +515,67 @@
 <button id="backToTop">
     ↑
 </button>>
+    <a href="https://wa.me/9509931253?text=नमस्ते,%20मुझे%20अंक%20ज्योतिष%20के%20बारे%20में%20जानकारी%20चाहिए।"
+    class="whatsapp-btn"
+    target="_blank"
+    aria-label="WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>    
+   <!-- ===============================
+     Consultation Booking Popup
+================================ -->
+
+        <div class="popup-overlay" id="popup">
+
+            <div class="popup-box">
+
+                <!-- Close Button -->
+                <span class="close-popup" id="closePopup">&times;</span>
+
+                <h2>🔮 Book Consultation</h2>
+
+                <p>अपनी जानकारी भरें, हम जल्द ही आपसे संपर्क करेंगे।</p>
+
+                <form id="popupForm">
+
+                    <input
+                        type="text"
+                        id="pname"
+                        placeholder="👤 पूरा नाम"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        id="pmobile"
+                        placeholder="📱 मोबाइल नंबर"
+                        required
+                    >
+
+                    <input
+                        type="date"
+                        id="pdob"
+                        required
+                    >
+
+                    <textarea
+                        id="pproblem"
+                        rows="5"
+                        placeholder="💬 अपनी समस्या लिखें..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">
+                        🔮 अभी परामर्श बुक करें
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
     <script src="index.js"></script>
 
     

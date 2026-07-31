@@ -1060,11 +1060,9 @@ nav{
 .footer-box{
     text-align: left;
 }
-
 .footer-box ul{
     padding-left: 20px;
 }
-
 .footer-box ul li{
     list-style-position: inside;
 }
@@ -1074,64 +1072,218 @@ nav{
 .hero1 h3,
 .hero1 p,
 .hero-buttons{
-
     opacity:0;
     transform:translateY(60px) scale(.9);
-
 }
-
 .hero1.show h1,
 .hero1.show h2,
 .hero1.show h3,
 .hero1.show p,
 .hero1.show .hero-buttons{
-
     opacity:1;
     transform:translateY(0) scale(1);
-
 }
 .hero1.show h1{
-
     transition:1s ease;
 }
-
 .hero1.show h2{
-
     transition:1s ease .3s;
 }
-
 .hero1.show h3{
-
     transition:1s ease .6s;
 }
-
 .hero1.show p{
-
     transition:1s ease .9s;
 }
-
 .hero1.show .hero-buttons{
-
     transition:1s ease 1.2s;
 }
 .hero1.show h1,
 .hero1.show h2{
-
     animation:heroGlow 2s infinite alternate;
 }
-
 @keyframes heroGlow{
-
     from{
-
         text-shadow:0 0 8px #D4AF37;
     }
-
     to{
-
         text-shadow:
         0 0 20px #FFD700,
         0 0 35px #FFD700;
     }
+}
+.error{
+    border:2px solid red !important;
+}
+.success{
+    border:2px solid #28a745 !important;
+}
+.error-message{
+    color:red;
+    font-size:14px;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+.whatsapp-btn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    text-decoration:none;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    z-index:9999;
+    transition:.35s;
+}
+.whatsapp-btn:hover{
+    transform:scale(1.12);
+    box-shadow:0 15px 35px rgba(37,211,102,.45);
+}
+.whatsapp-btn{
+    animation:whatsappPulse 2s infinite;
+}
+@keyframes whatsappPulse{
 
+    0%{
+        box-shadow:0 0 0 0 rgba(37,211,102,.7);
+    }
+    70%{
+       box-shadow:0 0 0 20px rgba(37,211,102,0);
+    }
+    100%{
+        box-shadow:0 0 0 0 rgba(37,211,102,0);
+    }
+}
+/* ==============================
+   Consultation Popup
+============================== */
+.popup-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    backdrop-filter: blur(6px);
+}
+
+.popup-overlay.active{
+    display: flex;
+}
+
+.popup-box{
+    width: 450px;
+    max-width: 92%;
+    background: #FFF8EE;
+    border: 2px solid #D4AF37;
+    border-radius: 20px;
+    padding: 35px 30px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    animation: popupZoom .35s ease;
+}
+
+@keyframes popupZoom{
+    from{
+        opacity:0;
+        transform: scale(.8);
+    }
+    to{
+        opacity:1;
+        transform: scale(1);
+    }
+}
+
+.popup-box h2{
+    color:#6A1B1A;
+    text-align:center;
+    margin-bottom:10px;
+    font-size:30px;
+}
+
+.popup-box p{
+    text-align:center;
+    color:#555;
+    margin-bottom:25px;
+}
+
+.popup-box input,
+.popup-box textarea{
+    width:100%;
+    padding:14px 16px;
+    margin-bottom:18px;
+    border:1px solid #d4af37;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+    transition:.3s;
+    background:#fff;
+}
+
+.popup-box input:focus,
+.popup-box textarea:focus{
+    border-color:#6A1B1A;
+    box-shadow:0 0 10px rgba(212,175,55,.35);
+}
+
+.popup-box textarea{
+    resize:none;
+    height:120px;
+}
+
+.popup-box button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:linear-gradient(90deg,#D4AF37,#6A1B1A);
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+.popup-box button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+.close-popup{
+    position:absolute;
+    right:18px;
+    top:15px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#D4AF37;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    cursor:pointer;
+    transition:.3s;
+}
+.close-popup:hover{
+    background:#6A1B1A;
+    transform:rotate(90deg);
+}
+
+@media(max-width:768px){
+    .popup-box{
+        padding:25px 20px;
+    }
+    .popup-box h2{
+        font-size:24px;
+    }
 }
